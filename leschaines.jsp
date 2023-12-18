@@ -9,27 +9,18 @@
     <p>Saisir une chaine (Du texte avec 6 caractères minimum) : <input type="text" id="inputValeur" name="chaine">
     <p><input type="submit" value="Afficher">
 </form>
-<%-- Récupération des valeurs --%>
-    <% String chaine = request.getParameter("chaine"); %>
-    
-    <% if (chaine != null) { %>
+<%-- Exercice 1 : Compter le nombre de 'e' --%>
+<% if (chaine != null) { 
+    int nombreDeE = 0;
+    for (int i = 0; i < chaine.length(); i++) {
+        if (chaine.charAt(i) == 'e') {
+            nombreDeE++;
+        }
+    }
+%>
+    <p>Le nombre de lettre 'e' dans votre chaîne est : <%= nombreDeE %></p>
+<% } %>
 
-    <%-- Obtention de la longueur de la chaîne --%>
-    <% int longueurChaine = chaine.length(); %>
-    <p>La longueur de votre chaîne est de <%= longueurChaine %> caractères</p>
-
-    <%-- Extraction du 3° caractère dans votre chaine --%>
-    <% char caractereExtrait = chaine.charAt(2); %>
-    <p>Le 3° caractère de votre chaine est la lettre <%= caractereExtrait %></p>
-
-    <%-- Obtention d'une sous-chaîne --%>
-    <% String sousChaine = chaine.substring(2, 6); %>
-    <p>Une sous chaine de votre texte : <%= sousChaine %></p>
-
-    <%-- Recharche de la lettre "e" --%>
-    <% char recherche = 'e'; 
-       int position = chaine.indexOf(recherche); %>
-    <p>Votre premier "e" est en : <%= position %></p>
 
     
 <h2>Exercice 1 : Combien de 'e' dans notre chaine de charactère ?</h2>
