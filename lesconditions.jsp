@@ -10,24 +10,26 @@
     <p>Saisir la valeur 2 : <input type="text" id="inputValeur" name="valeur2">
     <p><input type="submit" value="Afficher">
 </form>
-<%-- Récupération des valeurs --%>
-    <% String valeur1 = request.getParameter("valeur1"); %>
-    <% String valeur2 = request.getParameter("valeur2"); %>
+<%-- Récupération des valeurs A, B et C --%>
+<% String valeurA = request.getParameter("valeurA"); %>
+<% String valeurB = request.getParameter("valeurB"); %>
+<% String valeurC = request.getParameter("valeurC"); %>
 
-    <%-- Vérification de la condition entre les deux valeurs --%>
-    <% if (valeur1 != null && valeur2 != null) { %>
-        <%-- Conversion des valeurs en entiers pour la comparaison --%>
-        <% int intValeur1 = Integer.parseInt(valeur1); %>
-        <% int intValeur2 = Integer.parseInt(valeur2); %>
+<%-- Vérification et traitement pour l'Exercice 1 --%>
+<% if (valeurA != null && valeurB != null && valeurC != null && !valeurA.isEmpty() && !valeurB.isEmpty() && !valeurC.isEmpty()) { %>
+    <% 
+        int intValeurA = Integer.parseInt(valeurA);
+        int intValeurB = Integer.parseInt(valeurB);
+        int intValeurC = Integer.parseInt(valeurC); 
         
-        <%-- Condition if pour comparer les valeurs --%>
-        <% if (intValeur1 > intValeur2) { %>
-            <p>Valeur 1 est supérieure à Valeur 2.</p>
-        <% } else if (intValeur1 < intValeur2) { %>
-            <p>Valeur 1 est inférieure à Valeur 2.</p>
-        <% } else { %>
-            <p>Valeur 1 est égale à Valeur 2.</p>
-        <% } %>
+        out.println("<h2>Exercice 1 : Comparaison 1</h2>");
+        if (intValeurC > intValeurA && intValeurC < intValeurB) {
+            out.println("<p>Oui, C (" + intValeurC + ") est compris entre A (" + intValeurA + ") et B (" + intValeurB + ").</p>");
+        } else {
+            out.println("<p>Non, C (" + intValeurC + ") n'est pas compris entre A (" + intValeurA + ") et B (" + intValeurB + ").</p>");
+        }
+    %>
+
    
     
 <h2>Exercice 1 : Comparaison 1</h2>
@@ -42,7 +44,6 @@ Oui C est compris entre A et B</p>
 <h2>Exercice 2 : Pair ou Impair ?</h2>
 <p>Écrivez un programme pour vérifier si un nombre est pair ou impair en utilisant une structure if</p>
 
-<% } %>
 <p><a href="index.html">Retour au sommaire</a></p>
 </body>
 </html>
