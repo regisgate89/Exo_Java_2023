@@ -94,7 +94,6 @@ Exemple : L'hiver sera pluvieux</br>
 Lhvrsr lvex</p>
 
 <% 
-    String chaine = request.getParameter("chaine");
     if (chaine != null && chaine.length() >= 6) {
         out.println("<h2>Exercice 4 : Afficher une lettre sur deux</h2>");
         StringBuilder chaineUneLettreSurDeux = new StringBuilder();
