@@ -88,6 +88,7 @@ pluvieux</p>
     }
 %>
 
+
 <h2>Exercice 4 : Afficher une lettre sur deux</h2>
 <p>Ecrire le programme pour afficher seulement une lettre sur deux de votre texte </br>
 Exemple : L'hiver sera pluvieux</br>
