@@ -69,7 +69,6 @@ L'hiver</br>
 sera</br>
 pluvieux</p>
 <% 
-    String chaine = request.getParameter("chaine");
     if (chaine != null && chaine.length() >= 6) {
         int longueurChaine = chaine.length();
         out.println("<p>La longueur de votre chaîne est de " + longueurChaine + " caractères</p>");
