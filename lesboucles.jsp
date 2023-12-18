@@ -24,31 +24,7 @@
        <%= "*" %>
     <% } %>
     </p>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Carré d'Étoiles</title>
-</head>
-<body>
-    <form action="carreEtoiles.jsp" method="post">
-        Entrez la taille du carré : <input type="number" name="taille" />
-        <input type="submit" value="Dessiner" />
-    </form>
-    <%
-        String tailleString = request.getParameter("taille");
-        if (tailleString != null && !tailleString.isEmpty()) {
-            int taille = Integer.parseInt(tailleString);
-            for (int i = 0; i < taille; i++) {
-                for (int j = 0; j < taille; j++) {
-                    out.print("*");
-                }
-                out.println("<br/>");
-            }
-        }
-    %>
-</body>
-</html>
+
 
 <h2>Exercice 1 : Le carré d'étoiles</h2>
 <p>Ecrire le code afin de produire un carré d'étoile</p>
