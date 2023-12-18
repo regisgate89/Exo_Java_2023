@@ -29,6 +29,7 @@
         } else {
             out.println("<p>Non, C (" + intValeurC + ") n'est pas compris entre A (" + intValeurA + ") et B (" + intValeurB + ").</p>");
         }
+ }
     %>
 
    
