@@ -93,6 +93,21 @@ pluvieux</p>
 Exemple : L'hiver sera pluvieux</br>
 Lhvrsr lvex</p>
 
+<% 
+    String chaine = request.getParameter("chaine");
+    if (chaine != null && chaine.length() >= 6) {
+        out.println("<h2>Exercice 4 : Afficher une lettre sur deux</h2>");
+        StringBuilder chaineUneLettreSurDeux = new StringBuilder();
+        for (int i = 0; i < chaine.length(); i += 2) {
+            chaineUneLettreSurDeux.append(chaine.charAt(i));
+        }
+        out.println("<p>" + chaineUneLettreSurDeux.toString() + "</p>");
+    } else if (chaine != null) {
+        out.println("<p>Veuillez saisir une chaîne de 6 caractères minimum.</p>");
+    }
+%>
+
+
 <h2>Exercice 5 : La phrase en verlant</h2>
 <p>Ecrire le programme afin d'afficher le texte en verlant </br>
 Exemple : L'hiver sera pluvieux</br>
