@@ -12,19 +12,23 @@
     </form>
 
     <%-- Récupération de la valeur saisie par l'utilisateur --%>
-    <% String valeur = request.getParameter("valeur"); %>
-        
-    <%-- Vérification de l'existence de la valeur --%>
-    <% if (valeur != null && !valeur.isEmpty()) { %>
-        <% int cpt = Integer.parseInt(valeur); %>
-        <%-- Boucles imbriquées pour afficher le carré d'étoiles --%>
-        <% for (int i = 1; i <= cpt; i++) { %>
-            <p>
-            <% for (int j = 1; j <= cpt; j++) { %>
-                <%= "*" %>
-            <% } %>
-            </p>
-        <% } %>
+<% 
+    String valeur = request.getParameter("valeur"); 
+    try {
+        if (valeur != null && !valeur.isEmpty()) {
+            int cpt = Integer.parseInt(valeur);
+            for (int i = 1; i <= cpt; i++) {
+                out.print("<p>");
+                for (int j = 1; j <= cpt; j++) {
+                    out.print("*");
+                }
+                out.println("</p>");
+            }
+        }
+    } catch (NumberFormatException e) {
+        out.println("<p>Erreur : Veuillez entrer un nombre valide.</p>");
+    }
+%>
     <% } %>
 </body>
 </html>
