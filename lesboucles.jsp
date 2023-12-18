@@ -174,6 +174,19 @@
 <p>5 x 3 = 15</p>
 <p>5 x 4 = 20</p>
 <p>5 x 5 = 25</p>
+<% 
+    // Exercice 7 : Table de multiplication
+    out.println("<h2>Exercice 7 : Table de multiplication</h2>");
+    try {
+        int valeurMultiplication = Integer.parseInt(valeur);
+        out.println("<p>Table de multiplication pour le nombre " + valeurMultiplication + " :</p>");
+        for (int i = 1; i <= valeurMultiplication; i++) {
+            out.println("<p>" + valeurMultiplication + " x " + i + " = " + (valeurMultiplication * i) + "</p>");
+        }
+    } catch (NumberFormatException e) {
+        out.println("<p>Erreur : Veuillez entrer un nombre valide pour la table de multiplication.</p>");
+    }
+%>
 
 <p><a href="index.html">Retour au sommaire</a></p>
 </body>
