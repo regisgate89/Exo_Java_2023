@@ -1,37 +1,36 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Boucles</title>
 </head>
-<body bgcolor=white>
+<body bgcolor="white">
     <h1>Exercices sur les boucles</h1>
     <form action="#" method="post">
         <label for="inputValeur">Saisir le nombre d'étoiles : </label>
-        <input type="text" id="inputValeur" name="valeur">
+        <input type="number" id="inputValeur" name="valeur" required>
         <input type="submit" value="Afficher">
     </form>
 
-    <%-- Récupération de la valeur saisie par l'utilisateur --%>
-<% 
-    String valeur = request.getParameter("valeur"); 
-    try {
+    <% 
+        String valeur = request.getParameter("valeur");
         if (valeur != null && !valeur.isEmpty()) {
-            int cpt = Integer.parseInt(valeur);
-            for (int i = 1; i <= cpt; i++) {
-                out.print("<p>");
-                for (int j = 1; j <= cpt; j++) {
-                    out.print("*");
+            try {
+                int cpt = Integer.parseInt(valeur);
+                for (int i = 0; i < cpt; i++) {
+                    for (int j = 0; j < cpt; j++) {
+                        out.print("*");
+                    }
+                    out.println("<br/>");
                 }
-                out.println("</p>");
+            } catch (NumberFormatException e) {
+                out.println("<p>Erreur : Veuillez entrer un nombre valide.</p>");
             }
         }
-    } catch (NumberFormatException e) {
-        out.println("<p>Erreur : Veuillez entrer un nombre valide.</p>");
-    }
-%>
-    <% } %>
+    %>
 </body>
 </html>
+
 
 
 <h2>Exercice 1 : Le carré d'étoiles</h2>
