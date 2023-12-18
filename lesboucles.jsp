@@ -40,6 +40,22 @@
 <p>Ecrire le code afin de produire un triangle rectangle aligné sur la gauche</p>
 <p>Exemple si l'utilisateur saisie le valeur 5</p>
 <p>*</br>**</br>***</br>****</br>*****</p>
+<% 
+    // Exercice 2 : Triangle rectangle gauche
+    out.println("<h2>Exercice 2 : Triangle rectangle gauche</h2>");
+    try {
+        int hauteurTriangle = Integer.parseInt(valeur);
+        for (int ligne = 1; ligne <= hauteurTriangle; ligne++) {
+            for (int etoile = 1; etoile <= ligne; etoile++) {
+                out.print("*");
+            }
+            out.println("<br/>");
+        }
+    } catch (NumberFormatException e) {
+        out.println("<p>Erreur : Veuillez entrer un nombre valide pour le triangle.</p>");
+    }
+%>
+
 
 <h2>Exercice 3 : Triangle rectangle inversé</h2>
 <p>Ecrire le code afin de produire un triangle rectangle aligné sur la gauche</p>
