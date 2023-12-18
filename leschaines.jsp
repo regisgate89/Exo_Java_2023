@@ -68,6 +68,25 @@ Exemple : L'hiver sera pluvieux</br>
 L'hiver</br>
 sera</br>
 pluvieux</p>
+<% 
+    String chaine = request.getParameter("chaine");
+    if (chaine != null && chaine.length() >= 6) {
+        int longueurChaine = chaine.length();
+        out.println("<p>La longueur de votre chaîne est de " + longueurChaine + " caractères</p>");
+
+        out.println("<h2>Exercice 3 : Retour à la ligne</h2>");
+        for (int i = 0; i < chaine.length(); i++) {
+            char caractere = chaine.charAt(i);
+            if (caractere == ' ') {
+                out.print("<br/>");
+            } else {
+                out.print(caractere);
+            }
+        }
+    } else if (chaine != null) {
+        out.println("<p>Veuillez saisir une chaîne de 6 caractères minimum.</p>");
+    }
+%>
 
 <h2>Exercice 4 : Afficher une lettre sur deux</h2>
 <p>Ecrire le programme pour afficher seulement une lettre sur deux de votre texte </br>
