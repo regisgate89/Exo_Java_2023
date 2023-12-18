@@ -1,15 +1,16 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <html>
 <head>
-<title>Les chaines</title>
+    <title>Les chaines</title>
 </head>
 <body bgcolor=white>
-<h1>Exercices sur les chaines de charactères</h1>
-<form action="#" method="post">
-    <p>Saisir une chaine (Du texte avec 6 caractères minimum) : <input type="text" id="inputValeur" name="chaine">
-    <p><input type="submit" value="Afficher">
-</form>
-<% 
+    <h1>Exercices sur les chaines de caractères</h1>
+    <form action="#" method="post">
+        <p>Saisir une chaine (Du texte avec 6 caractères minimum) : <input type="text" name="chaine">
+        <p><input type="submit" value="Afficher">
+    </form>
+
+    <% 
         String chaine = request.getParameter("chaine");
         if (chaine != null && chaine.length() >= 6) {
             int longueurChaine = chaine.length();
@@ -23,6 +24,16 @@
 
             int position = chaine.indexOf('e');
             out.println("<p>Votre premier 'e' est en : " + position + "</p>");
+
+            // Exercice 1 : Compter le nombre de 'e'
+            int nombreDeE = 0;
+            for (int i = 0; i < chaine.length(); i++) {
+                if (chaine.charAt(i) == 'e') {
+                    nombreDeE++;
+                }
+            }
+            out.println("<h2>Exercice 1 : Combien de 'e' dans notre chaîne de caractères ?</h2>");
+            out.println("<p>Le nombre de lettre 'e' dans votre chaîne est : " + nombreDeE + "</p>");
         } else if (chaine != null) {
             out.println("<p>Veuillez saisir une chaîne de 6 caractères minimum.</p>");
         }
