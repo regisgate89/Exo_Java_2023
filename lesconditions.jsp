@@ -24,6 +24,10 @@
         int intValeurC = Integer.parseInt(valeurC); 
         
         out.println("<h2>Exercice 1 : Comparaison 1</h2>");
+        out.println("<p>A = " + intValeurA + "</p>");
+        out.println("<p>B = " + intValeurB + "</p>");
+        out.println("<p>C = " + intValeurC + "</p>");
+
         if (intValeurC > intValeurA && intValeurC < intValeurB) {
             out.println("<p>Oui, C (" + intValeurC + ") est compris entre A (" + intValeurA + ") et B (" + intValeurB + ").</p>");
         } else {
