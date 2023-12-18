@@ -111,6 +111,20 @@ Lhvrsr lvex</p>
 <p>Ecrire le programme afin d'afficher le texte en verlant </br>
 Exemple : L'hiver sera pluvieux</br>
 xueivulp ares revih'l</p>
+<% 
+
+    if (chaine != null && chaine.length() >= 6) {
+        out.println("<h2>Exercice 5 : La phrase en verlant</h2>");
+        StringBuilder chaineEnVerlant = new StringBuilder();
+        for (int i = chaine.length() - 1; i >= 0; i--) {
+            chaineEnVerlant.append(chaine.charAt(i));
+        }
+        out.println("<p>" + chaineEnVerlant.toString() + "</p>");
+    } else if (chaine != null) {
+        out.println("<p>Veuillez saisir une chaîne de 6 caractères minimum.</p>");
+    }
+%>
+
 
 <h2>Exercice 6 : Consonnes et voyelles</h2>
 <p>Ecrire le programme afin de compter les consonnes et les voyelles dans votre texte</p>
