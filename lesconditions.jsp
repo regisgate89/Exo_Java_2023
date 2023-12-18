@@ -29,9 +29,9 @@
         out.println("<p>C = " + intValeurC + "</p>");
 
         if (intValeurC > intValeurA && intValeurC < intValeurB) {
-            out.println("<p>Oui, C (" + intValeurC + ") est compris entre A (" + intValeurA + ") et B (" + intValeurB + ").</p>");
+            out.println("<p>Oui, C  est compris entre A  et B .</p>");
         } else {
-            out.println("<p>Non, C (" + intValeurC + ") n'est pas compris entre A (" + intValeurA + ") et B (" + intValeurB + ").</p>");
+            out.println("<p>Non, C  n'est pas compris entre A  et B .</p>");
         }
  }
     %>
