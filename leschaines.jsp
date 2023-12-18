@@ -128,6 +128,30 @@ xueivulp ares revih'l</p>
 
 <h2>Exercice 6 : Consonnes et voyelles</h2>
 <p>Ecrire le programme afin de compter les consonnes et les voyelles dans votre texte</p>
+
+<% 
+
+    if (chaine != null && chaine.length() >= 6) {
+        out.println("<h2>Exercice 6 : Consonnes et voyelles</h2>");
+        int nombreVoyelles = 0, nombreConsonnes = 0;
+        chaine = chaine.toLowerCase(); // Pour simplifier la vérification
+        for (int i = 0; i < chaine.length(); i++) {
+            char c = chaine.charAt(i);
+            if (c >= 'a' && c <= 'z') { // Vérifie si c'est une lettre
+                if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+                    nombreVoyelles++;
+                } else {
+                    nombreConsonnes++;
+                }
+            }
+        }
+        out.println("<p>Nombre de voyelles : " + nombreVoyelles + "</p>");
+        out.println("<p>Nombre de consonnes : " + nombreConsonnes + "</p>");
+    } else if (chaine != null) {
+        out.println("<p>Veuillez saisir une chaîne de 6 caractères minimum.</p>");
+    }
+%>
+
 <p><a href="index.html">Retour au sommaire</a></p>
 </body>
 </html>
