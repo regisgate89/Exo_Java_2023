@@ -42,6 +42,14 @@ j</br>
 o</br>
 u</br>
 r</p>
+<%-- Exercice 2 : Affichage vertical de la chaîne --%>
+<% if (chaine != null) { 
+    out.println("<h2>Exercice 2 : Affichage vertical</h2>");
+    for (int i = 0; i < chaine.length(); i++) {
+        out.println("<p>" + chaine.charAt(i) + "</p>");
+    }
+} %>
+
 
 <h2>Exercice 3 : Retour à la ligne</h2>
 <p>La présence d'un espace provoque un retour à la ligne </br>
