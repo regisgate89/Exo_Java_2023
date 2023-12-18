@@ -133,6 +133,39 @@
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**</br>&nbsp;&nbsp;&nbsp;&nbsp;***</br>&nbsp;&nbsp;****</br>*****</p>
 <p>*****</br>&nbsp;&nbsp;****</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*</p>
 
+<% 
+    // Exercice 6 : Demi-losange
+    out.println("<h2>Exercice 6 : Demi-losange</h2>");
+    try {
+        int hauteurLosange = Integer.parseInt(valeur);
+
+        // Partie supérieure du losange (triangle isocèle)
+        for (int ligne = 1; ligne <= hauteurLosange; ligne++) {
+            for (int espace = hauteurLosange - ligne; espace > 0; espace--) {
+                out.print("&nbsp;&nbsp;");
+            }
+            for (int etoile = 1; etoile <= ligne; etoile++) {
+                out.print("*");
+            }
+            out.println("<br/>");
+        }
+
+        // Partie inférieure du losange (triangle inversé)
+        for (int ligne = hauteurLosange; ligne > 0; ligne--) {
+            for (int espace = hauteurLosange - ligne; espace > 0; espace--) {
+                out.print("&nbsp;&nbsp;");
+            }
+            for (int etoile = 1; etoile <= ligne; etoile++) {
+                out.print("*");
+            }
+            out.println("<br/>");
+        }
+    } catch (NumberFormatException e) {
+        out.println("<p>Erreur : Veuillez entrer un nombre valide pour le demi-losange.</p>");
+    }
+%>
+
+
 <h2>Exercice 7 : La table de multiplication</h2>
 <p>Ecrire le code afin de créser une table de multiplication</p>
 <p>Exemple si l'utilisateur saisie le valeur 5</p>
