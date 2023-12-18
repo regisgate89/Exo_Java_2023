@@ -7,29 +7,28 @@
 <body bgcolor="white">
     <h1>Exercices sur les boucles</h1>
     <form action="#" method="post">
-        <label for="inputValeur">Saisir le nombre d'étoiles : </label>
+        <label for="inputValeur">Saisir le nombre d'étoiles pour le carré : </label>
         <input type="number" id="inputValeur" name="valeur" required>
         <input type="submit" value="Afficher">
     </form>
 
     <% 
-        String valeur = request.getParameter("valeur");
-        if (valeur != null && !valeur.isEmpty()) {
-            try {
-                int cpt = Integer.parseInt(valeur);
-                for (int i = 0; i < cpt; i++) {
-                    for (int j = 0; j < cpt; j++) {
-                        out.print("*");
-                    }
-                    out.println("<br/>");
+    String valeur = request.getParameter("valeur");
+    if (valeur != null && !valeur.isEmpty()) {
+        try {
+            int tailleCarre = Integer.parseInt(valeur);
+            out.println("<h2>Exercice 1 : Le carré d'étoiles</h2>");
+            for (int i = 0; i < tailleCarre; i++) {
+                for (int j = 0; j < tailleCarre; j++) {
+                    out.print("*");
                 }
-            } catch (NumberFormatException e) {
-                out.println("<p>Erreur : Veuillez entrer un nombre valide.</p>");
+                out.println("<br/>");
             }
+        } catch (NumberFormatException e) {
+            out.println("<p>Erreur : Veuillez entrer un nombre valide pour le carré d'étoiles.</p>");
         }
+    }
     %>
-<% } %>
-
 
 
 <h2>Exercice 1 : Le carré d'étoiles</h2>
